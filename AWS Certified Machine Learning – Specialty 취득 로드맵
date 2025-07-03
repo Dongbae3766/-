@@ -1,0 +1,73 @@
+AWS Certified Machine Learning – Specialty 취득 로드맵
+AWS ML Specialty 자격증은 AWS 상에서 머신러닝 워크로드를 설계·구축·배포·운영하는 능력을 검증합니다. 클라우드 경험이 전무하다면, 아래 여정을 따라 단계적으로 준비하세요.
+
+1. 기초 다지기: 클라우드 & ML 맛보기
+- AWS Cloud Practitioner
+• AWS 클라우드의 핵심 개념, 서비스, 보안, 요금 모델 이해
+• AWS Cloud Practitioner Essentials 디지털 강의(AWS Skill Builder) 수강
+• 샌드박스 계정에서 간단한 S3 버킷 생성·IAM 사용자 관리 실습
+- 파이썬 & 머신러닝 입문
+• Coursera “Machine Learning” by Andrew Ng로 통계·회귀·분류 기초 습득
+• Kaggle Micro-course(파이썬, pandas, 머신러닝 평가 지표) 활용
+• 간단한 분류·회귀 프로젝트(예: 붓꽃 데이터)로 실습
+
+2. AWS 핵심 서비스 마스터: Associate 단계
+권장 자격증
+- AWS Certified Solutions Architect – Associate
+- AWS Certified Developer – Associate
+이들 자격증 준비 과정에서 다음 서비스를 집중 학습하세요:
+- 컴퓨팅(EC2, Lambda)
+- 스토리지(S3, EFS)
+- 네트워킹(VPC, Route 53)
+- 데이터베이스(RDS, DynamoDB)
+- 보안(IAM, KMS)
+팁: Udemy, A Cloud Guru, AWS Skill Builder Labs에서 실습형 강의 수강
+
+
+3. ML Specialty 심화 학습
+AWS 공식 교육 과정
+- Machine Learning Foundations (디지털)
+- Machine Learning Immersion Days (실습 워크숍)
+주요 학습 주제
+- 데이터 엔지니어링(20%)
+• S3, Glue, Kinesis를 이용한 데이터 수집·전처리
+- 탐색적 데이터 분석(24%)
+• 통계 기법, 시각화, Numpy/pandas 활용
+- 모델링(36%)
+• 지도·비지도 학습 알고리즘(XGBoost, CNN, RNN)
+• Amazon SageMaker를 이용한 학습·튜닝
+- 머신러닝 운영(20%)
+• 모델 배포, A/B 테스트, 모니터링, 자동화 파이프라인 구축
+| 도메인 | 비중 | 
+| 데이터 엔지니어링 | 20% | 
+| 탐색적 데이터 분석 | 24% | 
+| 모델링 | 36% | 
+| 머신러닝 운영 및 자동화 | 20% | 
+
+
+
+4. 모의고사 & 실전 연습
+- Official AWS Sample Questions (Pearson VUE)
+- Udemy/A Cloud Guru/Whizlabs Practice Exams
+- ExamTopics 무료 기출·풀이
+- 실습 프로젝트
+• SageMaker 노트북으로 데이터 파이프라인 구성
+• 모델 학습→배포→엔드포인트 모니터링 일련 흐름 구현
+
+5. 시험 등록 & 일정 관리
+- 응시 방식: Pearson VUE 시험장 또는 온라인(OnVUE)
+- 시험 정보
+• 시험 코드: MLS-C01
+• 문항 수: 65문제, 시험 시간: 180분, 응시료: 300 USD
+- 최소 준비 기간: 기초 1–2 개월 + Associate 2–3 개월 + ML Specialty 2–3 개월
+- 추천 일정:
+- Cloud Practitioner → 1개월
+- Associate 자격증 → 2개월
+- ML Specialty 준비 → 2개월
+
+6. 추가 자료 & 커뮤니티
+- AWS 공식 문서 & Whitepapers
+- GitHub 샘플 노트북
+- YouTube: AWS ML 서비스 튜토리얼
+- AWS Developer Forums, Stack Overflow, 네이버 카페
+위 로드맵을 참고해 차근차근 스킬을 쌓으면, 클라우드 초심자라도 AWS Certified Machine Learning – Specialty를 충분히 도전할 수 있습니다. 다음 단계로 궁금한 점 있으세요? 😄
