@@ -1,0 +1,68 @@
+!pip install streamlit
+!pip install pyngrok
+!pip list | grep streamlit
+!touch app2.py	#py 파일 생성
+!streamlit run app2.py &> ./log.txt &
+!npm install localtunnel
+!npx localtunnel --port 8501 & curl ipv4.icanhazip.com
+#===================================================================================
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import streamlit as st
+import joblib
+from sklearn.model_selection import train_test_split, cross_validate
+from sklearn.model_selection import StratifiedKFold, GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
+from scipy.stats import uniform, randint
+from sklearn.model_selection import RandomizedSearchCV
+#===================================================================================
+df = pd.read_csv('https://raw.githubusercontent.com/rickiepark/hg-mldl/master/wine.csv')
+
+data = df.iloc[:,:-1]
+target = df.iloc[:,-1:]
+
+X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=42)
+
+sub_train, val_test, sub_target, val_target = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
+
+params1 = {
+    "min_impurity_decrease" : np.arange(0.0001, 0.001, 0.0001),
+    "max_depth" : range(3,20,1),
+    "min_samples_split" : range(2,100,5)
+}
+
+dt = DecisionTreeClassifier(random_state=50)
+gs = GridSearchCV(dt, param_grid=params1, n_jobs=-1)
+gs.fit(X_train, y_train)
+
+best_model = gs.best_estimator_
+model_file = "Wine_GridSearchCV.joblib"
+
+joblib.dump(value=best_model,filename=model_file)
+#===================================================================================
+params2 = {
+    "min_impurity_decrease" : uniform(0.0001, 0.0015),
+    "max_depth" : randint(3,50),
+    "min_samples_split" : randint(2,30),
+    "min_samples_leaf" : randint(1,30)
+}
+
+dt = DecisionTreeClassifier(random_state=50)
+gs = RandomizedSearchCV(
+    dt,
+    params2,             # 사용자 정의된 매개변수
+    n_iter=100,         # 100회 교차검증
+    n_jobs=-1,          # 전체 param 반복
+    random_state=50
+)
+gs.fit(X_train,y_train)
+
+best_model2 = gs.best_estimator_
+
+model_file = "Wine_RandomizedSearchCV.joblib"
+
+joblib.dump(value=best_model2,filename=model_file)
