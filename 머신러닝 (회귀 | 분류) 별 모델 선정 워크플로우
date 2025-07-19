@@ -1,0 +1,36 @@
+# 머신러닝 워크플로우 : 
+
+# 회귀 문제
+models = {
+    'LinearRegression': LinearRegression(),
+    'Ridge': Ridge(), 
+    'RandomForest': RandomForestRegressor(),
+    'XGBoost': XGBRegressor(),
+    'SVM': SVR()
+}
+
+# 분류 문제  
+models = {
+    'LogisticRegression': LogisticRegression(),
+    'RandomForest': RandomForestClassifier(),
+    'XGBoost': XGBClassifier(),
+    'SVM': SVC()
+}
+
+#========================================================
+# 기본 파라미터로 모델 비교
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    score = model.score(X_test, y_test)
+    print(f"{name}: {score}")
+
+#========================================================
+best_model = # 기본 파라미터 결과가 제일 좋았던 모델
+
+param_grid = {
+    '해당 모델 옵션1': [100, 200, 300],
+    '해당 모델 옵션2': [10, 20, None],
+    '해당 모델 옵션3': [2, 5, 10]
+}
+
+grid_search = GridSearchCV(best_model, param_grid)
